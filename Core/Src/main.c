@@ -60,7 +60,7 @@ uint8_t echo_off[] = "ATE0\r\n";
 uint8_t init_wifi[] = "AT+CWINIT=1\r\n";
 uint8_t wifi_mode[] = "AT+CWMODE=1\r\n";
 uint8_t wifi_no_autoconnect[] = "AT+CWAUTOCONN=0\r\n";
-uint8_t wifi_connect[] = WIFI_CREDENTIALS;
+uint8_t wifi_connect[] = WIFI_CREDENTIALS; // "AT+CWJAP=\"your_ssid\",\"your_password\"\r\n"
 uint8_t ntp_pool[] = "AT+CIPSNTPCFG=1,2,\"pl.pool.ntp.org\"\r\n";
 uint8_t query_time[] = "AT+CIPSNTPTIME?\r\n";
 
@@ -127,8 +127,8 @@ int main(void)
 	ssd1306_WriteString("ESP32C6-AT + STM32", Font_6x8, White);
 	ssd1306_SetCursor(2, 22);
 	ssd1306_WriteString("---- Inspired by ----", Font_6x8, White);
-	ssd1306_SetCursor(32, 32);
-	ssd1306_WriteString("msalamon.pl", Font_6x8, White);
+	ssd1306_SetCursor(2, 32);
+	ssd1306_WriteString("---- msalamon.pl ----", Font_6x8, White);
 	ssd1306_SetCursor(7, 43);
 	ssd1306_WriteString("SNTP clock (Poland)", Font_6x8, White);
 
